@@ -80,7 +80,7 @@ function buildHeader() {
   host.innerHTML = `
     <nav class="wrap nav" aria-label="Primary">
       <a class="brand" href="#top" aria-label="${SITE.name} home">
-        <span class="brand__leaf" aria-hidden="true">🌿</span>
+        <img class="brand__logo" src="./ccclogo.jpg" alt="Cannabis Coach logo" />
         <span class="brand__name">Clinical Canna</span>
       </a>
       <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
@@ -124,6 +124,7 @@ function buildFooter() {
     <div class="wrap">
       <div class="footer__grid">
         <div class="footer__brand">
+          <img class="brand__logo footer__logo" src="./ccclogo.jpg" alt="Cannabis Coach logo" />
           <span class="brand__name">Clinical Canna Coaching</span>
           <p class="footer__tag">${SITE.tagline}</p>
         </div>
