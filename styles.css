@@ -129,8 +129,10 @@ em { font-style: italic; color: var(--green-dk); }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 0; }
 .brand { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; }
 .brand__leaf { font-size: 1.5rem; filter: drop-shadow(2px 2px 0 rgba(0,0,0,.15)); }
-.brand__logo { height: 46px; width: auto; display: block; }
-.footer__logo { height: 64px; margin-bottom: .6rem; }
+.brand__logo { height: 58px; width: auto; display: block; mix-blend-mode: multiply; }
+.footer__logo { height: 92px; margin-bottom: .8rem; mix-blend-mode: normal; background: #fff; padding: 8px 12px; border-radius: 14px; }
+/* logo already contains the wordmark, so hide the adjacent text wordmark */
+.brand__name { display: none; }
 .brand__name {
   font-family: var(--font-display); font-size: 1.35rem; line-height: 1;
   background: var(--green-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
