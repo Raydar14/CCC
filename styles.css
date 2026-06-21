@@ -39,6 +39,7 @@
 
   /* Signature psychedelic gradient */
   --rainbow: linear-gradient(100deg, var(--lime), var(--teal) 32%, var(--violet) 60%, var(--emerald) 82%, var(--amber));
+  --green-grad: linear-gradient(100deg, var(--green-dk), var(--green) 30%, var(--moss) 62%, var(--lime));
 }
 
 /* ---------- 2. RESET / BASE ---------- */
@@ -129,7 +130,7 @@ em { font-style: italic; color: var(--green-dk); }
 .brand__leaf { font-size: 1.5rem; filter: drop-shadow(2px 2px 0 rgba(0,0,0,.15)); }
 .brand__name {
   font-family: var(--font-display); font-size: 1.35rem; line-height: 1;
-  background: var(--rainbow); -webkit-background-clip: text; background-clip: text; color: transparent;
+  background: var(--green-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
   -webkit-text-stroke: .4px var(--ink);
 }
 .nav__list { list-style: none; display: flex; align-items: center; gap: .35rem; margin: 0; padding: 0; }
@@ -201,7 +202,7 @@ em { font-style: italic; color: var(--green-dk); }
 .hero__word {
   display: block; font-family: var(--font-display);
   font-size: clamp(3.4rem, 1.5rem + 11vw, 7.5rem); line-height: .9; margin: .1em 0;
-  background: var(--rainbow); -webkit-background-clip: text; background-clip: text; color: transparent;
+  background: var(--green-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
   -webkit-text-stroke: 1.5px var(--ink);
   filter: drop-shadow(5px 5px 0 rgba(28,42,24,.18));
 }
