@@ -10,7 +10,7 @@
 const SITE = {
   name: "Clinical Canna Coaching",
   tagline: "Intentional, educated cannabis wellness — coaching for adults 21+.",
-  email: "hello@clinicalcannacoaching.com",
+  email: "hello@clinicalcannacoach.com",
 
   /* 👉 Paste your real scheduler link here (Calendly / Cal.com / Acuity).
      It auto-fills every "Book" button on the site. */
@@ -49,7 +49,7 @@ const SITE = {
     {
       heading: "Connect",
       links: [
-        { label: "Email us",   href: "mailto:hello@clinicalcannacoaching.com" },
+        { label: "Email us",   href: "mailto:hello@clinicalcannacoach.com" },
         { label: "Instagram",  href: "#" },
         { label: "Newsletter", href: "#resources" }
       ]
