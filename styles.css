@@ -15,7 +15,7 @@
   --lime:     #C9F24B;   /* zingy accent */
   --teal:     #1FB3A6;
   --violet:   #6E3FB0;
-  --magenta:  #FF5DA2;
+  --emerald:  #2FA968;   /* green accent (replaces former pink) */
   --amber:    #FBB13C;
 
   /* Roles */
@@ -38,7 +38,7 @@
   --shadow-soft: 0 18px 40px -22px rgba(20,40,20,.55);
 
   /* Signature psychedelic gradient */
-  --rainbow: linear-gradient(100deg, var(--lime), var(--teal) 32%, var(--violet) 60%, var(--magenta) 82%, var(--amber));
+  --rainbow: linear-gradient(100deg, var(--lime), var(--teal) 32%, var(--violet) 60%, var(--emerald) 82%, var(--amber));
 }
 
 /* ---------- 2. RESET / BASE ---------- */
@@ -213,7 +213,7 @@ em { font-style: italic; color: var(--green-dk); }
 .hero__blob { position: absolute; z-index: 1; filter: blur(2px); opacity: .9; mix-blend-mode: multiply; }
 .hero__blob--1 {
   width: 360px; height: 360px; right: -80px; top: 40px;
-  background: radial-gradient(circle at 30% 30%, var(--magenta), var(--violet));
+  background: radial-gradient(circle at 30% 30%, var(--emerald), var(--violet));
   border-radius: 60% 40% 55% 45% / 55% 50% 50% 45%;
   animation: drift 18s ease-in-out infinite;
 }
@@ -244,7 +244,7 @@ em { font-style: italic; color: var(--green-dk); }
   display: grid; gap: .35rem; transform: rotate(-1.2deg);
 }
 .fact--alt { background: var(--violet); transform: rotate(1.5deg); }
-.fact--alt2 { background: var(--magenta); transform: rotate(-.8deg); }
+.fact--alt2 { background: var(--emerald); transform: rotate(-.8deg); }
 .fact__big { font-family: var(--font-display); font-size: 2.6rem; line-height: 1; }
 .fact__small { font-size: .95rem; opacity: .95; }
 
@@ -268,7 +268,7 @@ em { font-style: italic; color: var(--green-dk); }
   font-size: 1.6rem; border-radius: 16px; border: 2.5px solid var(--ink); background: var(--lime);
 }
 .card:nth-child(2n) .card__icon { background: var(--amber); }
-.card:nth-child(3n) .card__icon { background: var(--magenta); }
+.card:nth-child(3n) .card__icon { background: var(--emerald); }
 .card p { margin: 0; color: var(--muted); }
 .services__cta { text-align: center; margin-top: 2.5rem; }
 
