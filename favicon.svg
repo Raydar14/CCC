@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-60 -70 120 112" role="img" aria-label="Cannabis leaf">
+  <!-- stylized cannabis leaf: 7 leaflets fanning from a central stem -->
+  <g fill="#1FB3A6">
+    <path d="M0,2 Q-7,-32 0,-64 Q7,-32 0,2 Z"/>
+    <path d="M0,2 Q-7,-30 0,-58 Q7,-30 0,2 Z" transform="rotate(34)"/>
+    <path d="M0,2 Q-7,-30 0,-58 Q7,-30 0,2 Z" transform="rotate(-34)"/>
+    <path d="M0,2 Q-6,-26 0,-48 Q6,-26 0,2 Z" transform="rotate(66)"/>
+    <path d="M0,2 Q-6,-26 0,-48 Q6,-26 0,2 Z" transform="rotate(-66)"/>
+    <path d="M0,2 Q-5,-20 0,-36 Q5,-20 0,2 Z" transform="rotate(98)"/>
+    <path d="M0,2 Q-5,-20 0,-36 Q5,-20 0,2 Z" transform="rotate(-98)"/>
+  </g>
+  <!-- stem -->
+  <rect x="-2" y="0" width="4" height="34" rx="2" fill="#1FB3A6"/>
+</svg>
