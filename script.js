@@ -144,6 +144,49 @@ function wireBooking() {
   if (btn) { btn.href = SITE.bookingUrl; btn.target = "_blank"; btn.rel = "noopener"; }
 }
 
+/* ---------- GA4 EVENT TRACKING ----------
+   Fires named GA4 events on the actions that matter (lead conversions).
+   After these fire once, mark them as "Key events" in GA4:
+   Admin → Events → toggle "Mark as key event", or Admin → Key events → New.
+   Primary conversion: book_consult_click. Secondary: email_click. */
+function track(name, params) {
+  if (typeof window.gtag === "function") window.gtag("event", name, params || {});
+}
+
+function wireAnalytics() {
+  const isBooking = href =>
+    href && SITE.bookingUrl && href.indexOf(SITE.bookingUrl) === 0;
+
+  document.querySelectorAll("a[href]").forEach(a => {
+    const href = a.getAttribute("href") || "";
+
+    // Primary conversion — clicked through to the scheduler
+    if (isBooking(href) || a.id === "booking-btn") {
+      a.addEventListener("click", () => track("book_consult_click", {
+        link_text: a.textContent.trim(),
+        link_location: a.closest(".site-header") ? "header"
+                     : a.closest(".schedule__card") ? "schedule_card" : "page",
+        link_url: SITE.bookingUrl
+      }));
+
+    // Secondary lead — emailed to schedule / get in touch
+    } else if (href.indexOf("mailto:") === 0) {
+      a.addEventListener("click", () => track("email_click", {
+        link_text: a.textContent.trim(),
+        email: href.replace("mailto:", "").split("?")[0]
+      }));
+
+    // Funnel step — in-page CTA that scrolls to the Schedule section
+    } else if (href === "#schedule") {
+      a.addEventListener("click", () => track("schedule_cta_click", {
+        link_text: a.textContent.trim(),
+        link_location: a.closest(".hero") ? "hero"
+                     : a.closest(".section--services") ? "services" : "page"
+      }));
+    }
+  });
+}
+
 /* ---------- SCROLL-SPY (highlights active section in nav) ---------- */
 function scrollSpy() {
   const links = [...document.querySelectorAll('.nav__link[href^="#"]')];
@@ -183,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buildHeader();
   buildFooter();
   wireBooking();
+  wireAnalytics();
   scrollSpy();
   revealOnScroll();
   const y = document.getElementById("year");
