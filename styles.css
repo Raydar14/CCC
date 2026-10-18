@@ -1,3 +1,4 @@
+html, body { overflow-x: clip; }
 /* ============================================================
    CLINICAL CANNA COACHING — styles.css
    One stylesheet. Change a value once, it updates site-wide.
@@ -110,7 +111,8 @@ em { font-style: italic; color: var(--green-dk); }
 .checklist { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: .6rem; }
 .checklist li { position: relative; padding-left: 2rem; }
 .checklist li::before {
-  content: "🌿"; position: absolute; left: 0; top: 0; font-size: 1.1rem;
+  content: ""; position: absolute; left: .35rem; top: .6em; width: .55rem; height: .55rem;
+  border-radius: 50%; background: currentColor; opacity: .55;
 }
 
 /* wavy SVG dividers */
@@ -172,9 +174,9 @@ em { font-style: italic; color: var(--green-dk); }
 .nav__toggle span::after { position: absolute; top: 7px; }
 
 @media (max-width: 860px) {
-  .nav__toggle { display: block; }
+  .nav__toggle { display: block; position: relative; z-index: 2; }
   .nav__list {
-    position: fixed; inset: 0 0 0 auto; width: min(80vw, 320px);
+    position: fixed; z-index: 1; inset: 0 0 auto auto; height: 100vh; height: 100dvh; width: min(80vw, 320px);
     flex-direction: column; align-items: stretch; gap: .25rem;
     background: var(--cream); border-left: 2.5px solid var(--ink);
     padding: 5rem 1.25rem 2rem; transform: translateX(105%); transition: transform .25s ease;

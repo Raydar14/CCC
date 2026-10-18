@@ -1,5 +1,5 @@
 /* ============================================================
-   CLINICAL CANNA COACHING — script.js
+   CLINICAL CANNA COACHING: script.js
    The "site-wide brain." Edit this ONCE and every page updates:
    the menu, the footer, the booking link, the SEO basics.
    To add a page later: create newpage.html, link styles.css +
@@ -9,7 +9,7 @@
 
 const SITE = {
   name: "Clinical Canna Coaching",
-  tagline: "Intentional, educated cannabis wellness — coaching for adults 21+.",
+  tagline: "Cannabis, with a clear head. Coaching for adults 21+.",
   email: "hello@clinicalcannacoach.com",
 
   /* 👉 Paste your real scheduler link here (Calendly / Cal.com / Acuity).
@@ -26,8 +26,8 @@ const SITE = {
         { label: "1:1 Coaching",            href: "#services" },
         { label: "Canna 101 (New users)",   href: "#services" },
         { label: "Mindful Use & Resets",    href: "#services" },
-        { label: "Dispensary Navigation",   href: "#services" },
-        { label: "Wellness Integration",    href: "#services" },
+        { label: "Dispensary Prep",         href: "#services" },
+        { label: "Cannabis & Routines",     href: "#services" },
         { label: "Workshops & Groups",      href: "#services" }
       ]
     },
@@ -160,7 +160,7 @@ function wireAnalytics() {
   document.querySelectorAll("a[href]").forEach(a => {
     const href = a.getAttribute("href") || "";
 
-    // Primary conversion — clicked through to the scheduler
+    // Primary conversion: clicked through to the scheduler
     if (isBooking(href) || a.id === "booking-btn") {
       a.addEventListener("click", () => track("book_consult_click", {
         link_text: a.textContent.trim(),
@@ -169,14 +169,14 @@ function wireAnalytics() {
         link_url: SITE.bookingUrl
       }));
 
-    // Secondary lead — emailed to schedule / get in touch
+    // Secondary lead: emailed to schedule / get in touch
     } else if (href.indexOf("mailto:") === 0) {
       a.addEventListener("click", () => track("email_click", {
         link_text: a.textContent.trim(),
         email: href.replace("mailto:", "").split("?")[0]
       }));
 
-    // Funnel step — in-page CTA that scrolls to the Schedule section
+    // Funnel step: in-page CTA that scrolls to the Schedule section
     } else if (href === "#schedule") {
       a.addEventListener("click", () => track("schedule_cta_click", {
         link_text: a.textContent.trim(),
