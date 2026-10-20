@@ -50,8 +50,8 @@ const SITE = {
       heading: "Connect",
       links: [
         { label: "Email us",   href: "mailto:hello@clinicalcannacoach.com" },
-        { label: "Instagram",  href: "#" },
-        { label: "Newsletter", href: "#resources" }
+        { label: "Instagram",  href: "#", soon: true },
+        { label: "Newsletter", href: "#", soon: true }
       ]
     }
   ],
@@ -117,7 +117,9 @@ function buildFooter() {
   const cols = SITE.footer.map(col => `
     <div class="footer__col">
       <h4>${col.heading}</h4>
-      <ul>${col.links.map(l => `<li><a href="${l.href}">${l.label}</a></li>`).join("")}</ul>
+      <ul>${col.links.map(l => l.soon
+          ? `<li><span class="footer__soon">${l.label} <em>· soon</em></span></li>`
+          : `<li><a href="${l.href}">${l.label}</a></li>`).join("")}</ul>
     </div>`).join("");
 
   host.innerHTML = `

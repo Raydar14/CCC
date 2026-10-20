@@ -302,6 +302,13 @@ em { font-style: italic; color: var(--green-dk); }
   font-size: .75rem; text-transform: uppercase; letter-spacing: .08em;
   padding: .3rem .7rem; border-radius: 999px; border: 2px solid var(--ink); margin-bottom: .7rem;
 }
+/* Placeholder cards — content not published yet */
+.res-card--soon { cursor: default; opacity: .92; }
+.res-card--soon:hover { transform: none; box-shadow: var(--shadow-soft); }
+.res-card__tag--soon { background: var(--violet); color: var(--cream); }
+.res-card__link--soon { color: var(--muted); font-weight: 700; }
+.res-card--feature .res-card__link--soon { color: rgba(255,255,255,.7); }
+
 @media (max-width: 620px) { .res-card--feature { grid-column: span 1; } }
 
 /* ---------- 9. SCHEDULE ---------- */
@@ -328,6 +335,8 @@ em { font-style: italic; color: var(--green-dk); }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
 .footer__col a { color: rgba(255,255,255,.85); text-decoration: none; }
 .footer__col a:hover { color: var(--yellow); }
+.footer__soon { color: rgba(255,255,255,.6); }
+.footer__soon em { font-style: normal; font-size: .8em; text-transform: uppercase; letter-spacing: .06em; opacity: .8; }
 .footer__disclaimer {
   margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.18);
   font-size: .82rem; color: rgba(255,255,255,.65); display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between;
